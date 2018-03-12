@@ -13,14 +13,14 @@ public class Blob extends Image {
     Animation walk;
 
     float time = 0;
-    float xVelocity = 0;
+    public float xVelocity = 0;
     float yVelocity = 0;
     boolean canJump = false;
-    boolean isFacingRight = true;
+    public boolean isFacingRight = true;
     public TiledMapTileLayer layer;
 
     final float GRAVITY = -1.5f;
-    final float MAX_VELOCITY = 10f;
+    public final float MAX_VELOCITY = 10f;
     final float DAMPING = 0.87f;
 
     public Blob() {

@@ -19,7 +19,7 @@ public class GameScreen implements Screen {
     OrthogonalTiledMapRenderer renderer;
     OrthographicCamera camera;
     Johny johny;
-    Blob blob;
+    Blob blob, blob2;
 
     private ArrayList<Rectangle> mapObjectsRects;
     private ArrayList<Rectangle> specialMapObjectsRects;
@@ -50,10 +50,16 @@ public class GameScreen implements Screen {
             specialMapObjectsRects.add(rect);
         }
         */
+
         blob = new Blob();
         blob.layer = (TiledMapTileLayer) map.getLayers().get("walls");
-        blob.setPosition(16, 10);
+        blob.setPosition(50, 15);
         stage.addActor(blob);
+
+        blob2 = new Blob();
+        blob2.layer = (TiledMapTileLayer) map.getLayers().get("walls");
+        blob2.setPosition(17, 15);
+        stage.addActor(blob2);
     }
 
     public void render(float delta) {
@@ -76,9 +82,10 @@ public class GameScreen implements Screen {
             music.stop();
         }
 
-        if (johny.getX() == blob.getX()){
-            game.setScreen(new GameOverScreen(game));
-            music.stop();
+        if (blob2.getX()>johny.getX()+1) {
+            blob2.isFacingRight=false;
+            blob2.xVelocity =  blob2.xVelocity -  blob2.MAX_VELOCITY/3;
+
         }
     }
 

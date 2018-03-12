@@ -17,10 +17,19 @@ public class Johny extends Image {
     float yVelocity = 0;
     boolean canJump = false;
     boolean isFacingRight = true;
+    boolean vivo;
     public TiledMapTileLayer layer;
 
+    public boolean isVivo() {
+        return vivo;
+    }
+
+    public void setVivo(boolean vivo) {
+        this.vivo = vivo;
+    }
+
     final float GRAVITY = -2.5f;
-    final float MAX_VELOCITY = 10f;
+    final float MAX_VELOCITY = 9f;
     final float DAMPING = 0.87f;
 
     public Johny() {
