@@ -49,11 +49,11 @@ public class GameScreen implements Screen {
             Rectangle rect = ((RectangleMapObject) mapObject).getRectangle();
             specialMapObjectsRects.add(rect);
         }
-
+        */
         blob = new Blob();
         blob.layer = (TiledMapTileLayer) map.getLayers().get("walls");
-        blob.setPosition(17, 10);
-        stage.addActor(blob);*/
+        blob.setPosition(16, 10);
+        stage.addActor(blob);
     }
 
     public void render(float delta) {
