@@ -13,6 +13,7 @@ import com.mygdx.game.Johny;
 import java.util.ArrayList;
 
 public class GameScreen implements Screen {
+    Game game;
     Stage stage;
     TiledMap map;
     OrthogonalTiledMapRenderer renderer;
@@ -25,7 +26,9 @@ public class GameScreen implements Screen {
 
     Music music = Gdx.audio.newMusic(Gdx.files.internal("data/song.mp3"));
 
-
+    public GameScreen(Game game) {
+        this.game = game;
+    }
 
     public void show() {
         map = new TmxMapLoader().load("level1.tmx");
@@ -67,6 +70,11 @@ public class GameScreen implements Screen {
 
         stage.act(delta);
         stage.draw();
+
+        if (johny.getY()< 0){
+            game.setScreen(new GameOverScreen(game));
+            music.stop();
+        }
     }
 
     public void dispose() {
