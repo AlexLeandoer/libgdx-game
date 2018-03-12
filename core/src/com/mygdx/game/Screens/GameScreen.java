@@ -75,6 +75,11 @@ public class GameScreen implements Screen {
             game.setScreen(new GameOverScreen(game));
             music.stop();
         }
+
+        if (johny.getX() == blob.getX()){
+            game.setScreen(new GameOverScreen(game));
+            music.stop();
+        }
     }
 
     public void dispose() {

@@ -19,7 +19,7 @@ public class Blob extends Image {
     boolean isFacingRight = true;
     public TiledMapTileLayer layer;
 
-    final float GRAVITY = -2.5f;
+    final float GRAVITY = -1.5f;
     final float MAX_VELOCITY = 10f;
     final float DAMPING = 0.87f;
 
